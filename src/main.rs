@@ -9,8 +9,10 @@ use serenity::all::{
 };
 use serenity::Client;
 use std::env;
-use tracing::error;
+use tracing::{error, info, warn};
 use unicode_segmentation::UnicodeSegmentation;
+
+const SELF_ID: u64 = 1314997214866571284;
 
 #[derive(Deserialize, Debug)]
 struct Evaluation {
@@ -88,11 +90,18 @@ struct Handler {
 #[async_trait]
 impl EventHandler for Handler {
     async fn message(&self, ctx: Context, msg: Message) {
+        info!("received message event");
         let guild_id = if let Some(guild_id) = msg.guild_id {
             guild_id.get()
         } else {
+            warn!("received message event with no guild id {:?}", msg);
             return;
         };
+
+        if msg.content.is_empty() || msg.author.bot || msg.author.id.get() == SELF_ID {
+            info!("message is likely from a bot, skipping...");
+            return;
+        }
 
         let report_channel_id = match guild_id {
             145457131640848384 => 335451227028717568, // sam's bot testing server
