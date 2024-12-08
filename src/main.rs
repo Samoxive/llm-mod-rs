@@ -139,10 +139,10 @@ async fn main() -> Result<()> {
         | GatewayIntents::GUILD_MESSAGE_REACTIONS
         | GatewayIntents::MESSAGE_CONTENT;
 
-    let _client = Client::builder(&token, intents)
+    let mut client = Client::builder(&token, intents)
         .event_handler(Handler { model })
-        .await
-        .expect("Err creating client");
+        .await?;
 
+    client.start().await?;
     Ok(())
 }
