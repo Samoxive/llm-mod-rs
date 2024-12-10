@@ -4,11 +4,10 @@ use mistralrs::Constraint::JsonSchema;
 use mistralrs::{Model, RequestBuilder, TextMessageRole, TextModelBuilder};
 use serde::Deserialize;
 use serde_json::json;
-use serenity::all::{
-    ChannelId, Context, CreateEmbed, CreateMessage, EventHandler, GatewayIntents, Message,
-};
+use serenity::all::{ChannelId, Context, CreateEmbed, CreateEmbedFooter, CreateMessage, EventHandler, GatewayIntents, Message};
 use serenity::Client;
 use std::env;
+use std::time::Instant;
 use tracing::{error, info, warn};
 use unicode_segmentation::UnicodeSegmentation;
 
@@ -113,7 +112,10 @@ impl EventHandler for Handler {
 
         let report_channel = ChannelId::from(report_channel_id);
 
+        let before = Instant::now();
         let violates_rules = evaluate_message(&self.model, &msg.content).await;
+        let after = Instant::now();
+
         if violates_rules {
             // we don't want to split into an emoji or something like that
             let content_summary = UnicodeSegmentation::graphemes(msg.content.as_str(), true)
@@ -126,6 +128,7 @@ impl EventHandler for Handler {
                         CreateEmbed::new()
                             .field("summary", content_summary, false)
                             .field("message link", msg.link(), false)
+                            .footer(CreateEmbedFooter::new(format!("took {:.2} seconds", after.duration_since(before).as_secs_f64())))
                             .title("found violating message"),
                     ),
                 )
