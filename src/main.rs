@@ -105,7 +105,7 @@ impl EventHandler for Handler {
 
         let report_channel_id = match guild_id {
             145457131640848384 => 335451227028717568, // sam's bot testing server
-            238666723824238602 => 1050059967337607199, // progdisc
+            238666723824238602 => 1315930244682743839, // progdisc
             _ => {
                 return;
             }
