@@ -1,0 +1,70 @@
+[
+  {
+    "expected_result": false,
+    "content": "I did observe that a DP or memoized solution would be faster but my simple recursive solution runs in a few milliseconds for my inputs anyways"
+  },
+  {
+    "expected_result": false,
+    "content": "Does anyone knows how to make a global variable in Groovy?"
+  },
+  {
+    "expected_result": false,
+    "content": "Try changing cout to std::cout"
+  },
+  {
+    "expected_result": false,
+    "content": "Also, your use of the shift operators is inconsistent"
+  },
+  {
+    "expected_result": false,
+    "content": "How do I fix it?"
+  },
+  {
+    "expected_result": false,
+    "content": "IMO, bit_cast should only be allowed either to std::byte or from std::byte. Nothing else really makes sense."
+  },
+  {
+    "expected_result": false,
+    "content": "the names are std::string, std::cin and std::cout.\nYou need to have a #include <string> and a #include <iostream> at the top of your file, too."
+  },
+  {
+    "expected_result": false,
+    "content": "Lm"
+  },
+  {
+    "expected_result": false,
+    "content": "Thanks thats a good bit of options, if I may just before you go to bed. For this:\nif elem_r and elem_g are the same type, I would also investigate whether making strong types for the occasion would yield better optimization (by letting the compiler know they cannot alias each other)."
+  },
+  {
+    "expected_result": false,
+    "content": "I was thinking like making separate types for each channel. If they are the same type, the compiler has to assume they could overlap. That would prevent some optimizations."
+  },
+  {
+    "expected_result": false,
+    "content": "ngl living short walking distance from work is such a perk"
+  },
+  {
+    "expected_result": false,
+    "content": "Somehow it didn't work"
+  },
+  {
+    "expected_result": false,
+    "content": "oh yeah, if you can wfh it's surely optimal\nI can't wfh mentally, just don't feel productive when doing things on same desk and same keyboard and same mouse as I used to grind dota in the evening"
+  },
+  {
+    "expected_result": false,
+    "content": "and I don't have nor want to invest into big flat with a separate office room"
+  },
+  {
+    "expected_result": true,
+    "content": "Dear Admin!\nHello, everyone!\nAs a seasoned fullstack developer, I'm looking for a new position to get hired.\n\nProgramming Languages: Python, JavaScript, TypeScript, PHP, Java\nFront-End: React, Next.js, Angular, Vue.js, svelte\nBack-End: Node.js, Express, Nestjs, Django, FastAPI, Flask, Laravel,\nDatabases: MySQL, PostgreSQL, MongoDB, SQLite\nCloud: AWS, Kubernetes, Docker, GCP\nDevOps: Jenkins, GitHub, Docker, Ansible, Terraform, CI/CD, Networking\nE-commerce: Shopify, WooCommerce, \n\nportfolio: //jack-lee.xyz/\nlinkedin: //au.linkedin.com/in/jack-lee-646422192\n\nIf you need a talented dev, or kind advice, plz dm me.\nyou are always welcome wheter you have good project, or a begineer in the software field.\nI'm always ready to face-to-face meeting and we can discuss more detail."
+  },
+  {
+    "expected_result": true,
+    "content": "Hello anyone willing to help me with a couple programming question in a test willing to pay urgent please message me"
+  },
+  {
+    "expected_result": true,
+    "content": "Hello Everyone! Nice to meet you. I am a highly skilled and innovative Web & Web3 Engineer with 6 years of progressive experience in web development. I have used React.js, Next.js, Web3.js and so on. If anyone need my help, please let me know. Thank you."
+  }
+]
